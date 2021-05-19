@@ -1,18 +1,28 @@
 <% if (theme.gitment){ %>
-<section class="comments" id="comments">
-    <div id="gitment_thread"></div>
-    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
-    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
-    <script>
-        var gitment = new Gitment({
-            owner: '<%- theme.gitment.owner %>',
-            repo: '<%- theme.gitment.repo %>',
-            oauth: {
-                client_id: '<%- theme.gitment.client_id %>',
-                client_secret: '<%- theme.gitment.client_secret %>',
-            },
-        })
-        gitment.render('comments')
-    </script>
-</section>
+    <% if (post.gitment){ %>
+        <section class="comments" id="comments">
+            <div id="gitment_thread"></div>
+            <!--<link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">-->
+            <link rel="stylesheet" href="/css/default.css?200702">
+            <!--<script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>-->
+            <script src="/js/gitment.browser.js?200702"></script>
+            <script>
+                var gitment = new Gitment({
+                    id: '<%- post.key %>',
+                    owner: '<%- theme.gitment.owner %>',
+                    repo: '<%- theme.gitment.repo %>',
+                    oauth: {
+                        client_id: '<%- theme.gitment.client_id %>',
+                        client_secret: '<%- theme.gitment.client_secret %>',
+                    },
+                    /*
+                    Personal GitHub APP “Gitment”
+                    https://github.com/settings/connections/applications/f9499ece3391318f822c
+                    The “client_secret” is only be used for OAuth！（貌似明文放出也无关紧要？
+                    */
+                })
+                gitment.render('comments')
+            </script>
+    </section>
+    <% } %>
 <% } %>

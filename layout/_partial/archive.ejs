@@ -1,16 +1,7 @@
 <div class="waterfall-item">
   <article class="article-card archive-article">
-    <div class="post-meta">
-      <%- partial('post/date', { post: post, date_format: date_format}) %>
-      <%- partial('post/category', { post: post }) %>
-    </div>
-    <%- partial('post/title', {
-        hasLink: true
-      }) %>
-    <% if(post.tags && post.tags.length){ %>
-    <div class="post-footer">
-        <%- partial('post/tag') %>
-    </div>
-    <% } %>
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="<%- url_for(post.path) %>">【<%- post.key %>】<%= post.title %></a>
+    </h3>
   </article>
 </div>

@@ -239,18 +239,18 @@
 
             $('#search').addEventListener(even, toggleSearch);
         },
-        reward: function () {
-            var modal = new this.modal('#reward');
-            $('#rewardBtn').addEventListener(even, modal.toggle);
+        // reward: function () {
+        //     var modal = new this.modal('#reward');
+        //     $('#rewardBtn').addEventListener(even, modal.toggle);
 
-            var $rewardToggle = $('#rewardToggle');
-            var $rewardCode = $('#rewardCode');
-            if ($rewardToggle) {
-                $rewardToggle.addEventListener('change', function () {
-                    $rewardCode.src = this.checked ? this.dataset.alipay : this.dataset.wechat
-                })
-            }
-        },
+        //     var $rewardToggle = $('#rewardToggle');
+        //     var $rewardCode = $('#rewardCode');
+        //     if ($rewardToggle) {
+        //         $rewardToggle.addEventListener('change', function () {
+        //             $rewardCode.src = this.checked ? this.dataset.alipay : this.dataset.wechat
+        //         })
+        //     }
+        // },
         waterfall: function () {
 
             if (w.innerWidth < 760) return;
@@ -451,12 +451,35 @@
         w.lazyScripts && w.lazyScripts.length && Blog.loadScript(w.lazyScripts)
     });
 
+    w.gEle = function(t) {
+        return document.getElementById(t)
+    };
+    
+    w.getjson = function(t, e, n) {
+        var i = new XMLHttpRequest;
+        return i.onreadystatechange = function() {
+            4 == i.readyState && (200 == i.status ? e(JSON.parse(i.response), n) : e({
+                code: -502,
+                message: "网络错误"
+            }, n))
+        },
+        i.open("GET", t, !0),
+        i.withCredentials = 0,
+        i.send(),
+        i
+    }
+
+    function refs(json) {
+        gEle('refs').textContent = json.object.sha.substr(0,7);
+    }
+
     w.addEventListener('DOMContentLoaded', function () {
         Blog.waterfall();
         var top = rootScollTop();
         Blog.toc.fixed(top);
         Blog.toc.actived(top);
         Blog.page.loaded();
+        getjson('https://cors.yuangezhizao.workers.dev/?url=https://api.github.com/repos/yuangezhizao/www/git/refs/heads/master', refs);
     });
 
     var ignoreUnload = false;
@@ -519,9 +542,9 @@
         Blog.share()
     }
 
-    if (w.BLOG.REWARD) {
-        Blog.reward()
-    }
+    // if (w.BLOG.REWARD) {
+    //     Blog.reward()
+    // }
 
     Blog.noop = noop;
     Blog.even = even;

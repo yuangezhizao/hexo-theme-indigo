@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/yuangezhizao
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.yuangezhizao.cn
+  * I am yuangezhizao (https://keybase.io/yuangezhizao) on keybase.
+  * I have a public key ASBC7Ynzs7zfzzZL2dpfYUyxCJc4w3EHJw49ezJG3lZb5go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012042ed89f3b3bcdfcf364bd9da5f614cb1089738c37107270e3d7b3246de565be60a",
+      "host": "keybase.io",
+      "kid": "012042ed89f3b3bcdfcf364bd9da5f614cb1089738c37107270e3d7b3246de565be60a",
+      "uid": "8f7fd48df48742eeb9016bdba9090919",
+      "username": "yuangezhizao"
+    },
+    "merkle_root": {
+      "ctime": 1539959729,
+      "hash": "a2e49cc6ce9f7ff584ccd6450f61afbdac28a7e496ae50255e967f3e4b51379e6583912064cc2461722482c5ec8bda92df1ae4e49bb079ae7eaf2c1e3cbfc8eb",
+      "hash_meta": "2b9c23a589a20abcec4d1e70241917ed34788ab72f414f1a464c40b5b18b1670",
+      "seqno": 3820970
+    },
+    "service": {
+      "entropy": "mRfcMAtW+xNpQLP809jQCu5f",
+      "hostname": "www.yuangezhizao.cn",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.7.3"
+  },
+  "ctime": 1539959748,
+  "expire_in": 504576000,
+  "prev": "8fecfe8d29ed79a580cbe1423342e96e74c782d026e0551cb5f94648374066bc",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgQu2J87O83882S9naX2FMsQiXOMNxBycOPXsyRt5WW+YKp3BheWxvYWTESpcCFMQgj+z+jSnteaWAy+FCM0LpbnTHgtAm4FUctflGSDdAZrzEIMnYQ09hEUfDz/aNkQyn98eV5a2P2rFT2Q6ddMTXlhsqAgHCo3NpZ8RAupJhfJkbw3Lgc32EHPj9hwAAP8lSyVXA6U2+qoaAUpsSx8pZqGt3lA/m9HD+zeGcfwRvPoH/3LnAt2cg3Kt+D6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIM9xmLy3xN1W4plKlTiSUA5Axty+Hn4nfkvQ5dmHNrlTo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/yuangezhizao
+
+==================================================================

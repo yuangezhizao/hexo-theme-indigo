@@ -1,1 +1,26 @@
-<time class="post-time" title="<%- full_date(post.date) %>" datetime="<%- date_xml(post.date) %>"  itemprop="datePublished"><%- post.date.format(config.date_format) %></time>
+<time class="post-time" title="<%- full_date(post.date) %>" datetime="<%- date_xml(post.date) %>"  itemprop="datePublished"><%- post.date.format(config.total_format) %></time>
+
+<% if(post.os == 0){ %>
+<span><i class="icon icon-windows icon-pr"></i><%- post.os_1 %></span>
+<%} %>
+
+<% if(post.os == 1){ %>
+<span><i class="icon icon-apple icon-pr"></i><%- post.os_1 %></span>
+<%} %>
+
+<% if(post.browser == 0){ %>
+<span><i class="icon icon-chrome icon-pr"></i><%- post.browser_1 %></span>
+<%} %>
+
+<% if(post.place){ %>
+<span><i class="icon icon-map-marker icon-pr"></i><%- post.place %></span>
+<%} %>
+
+<span><i class="icon icon-list-ol icon-pr"></i><%- post.key %></span>
+
+<% if(is_post()){ %>
+<span id="<%- post.key %>" class="leancloud_visitors" data-flag-title="<%- post.title %>">
+    <i class="icon icon-eye icon-pr"></i>
+    <i class="leancloud-visitors-count"></i>
+</span>
+<%} %>

@@ -1,5 +1,13 @@
+<!--
 <% if(theme.show_last_updated){ %>
 <span class="post-time">
     <%= __('post.last_updated') %><time datetime="<%- date_xml(post.updated) %>" itemprop="dateUpdated"><%- full_date(post.updated) %></time>
+</span><br>
+<%} %>
+-->
+<% if(theme.show_last_updated){ %>
+<span class="post-time">
+    本文创建于：<%- page.date.format('YYYY年MM月DD日 HH时mm分ss秒') %><br>
+    第<%- page.count %>次更新于：<time datetime="<%- date_xml(post.updated) %>" itemprop="dateUpdated"><%- post.updated.format('YYYY年MM月DD日 HH时mm分ss秒') %></time>
 </span><br>
 <%} %>

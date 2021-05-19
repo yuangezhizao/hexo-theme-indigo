@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /page/
+Sitemap: https://www.yuangezhizao.cn/sitemap.xml
