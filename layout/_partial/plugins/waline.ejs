@@ -6,10 +6,10 @@
     <script>
         new Waline({
             el: '#waline',
-            path: "<%- post.key %>",
             serverURL: "<%- theme.waline.serverURL %>",
+            path: "<%- post.key %>",
+            visitor: true,
             placeholder: "",
-            visitor: 1,
             emojiCDN: 'https://i0.hdslb.com/bfs/emote/', 
             emojiMaps: {
                 "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
@@ -187,8 +187,7 @@
                 "热词系列_知识盲区": "ccc94600b321a28116081e49ecedaa4ee8728312.png",
                 "热词系列_“狼火”": "33ccd3617bfa89e9d1498b13b7542b63f163e5de.png"
                 },
-            // enableQQ: true,
-            requiredFields: ['nick','mail']
+            requiredMeta: ['nick','mail']
         })
     </script>
     <!-- Waline Comments end -->
