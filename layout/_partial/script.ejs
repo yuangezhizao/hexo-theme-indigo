@@ -114,3 +114,15 @@ span_tree.innerHTML=health_message_tree
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
+
+<!-- 直接在页面<head></head>标签中引入，将会在 window 上挂载 Aegis 构造函数 -->
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+  id: 'Z4vVGEA6o96DNaY3Op', // 应用ID，即上报key
+  uin: 'Anonymous', // 用户唯一 ID（可选）
+  reportApiSpeed: true, // 接口测速
+  reportAssetSpeed: true, // 静态资源测速
+  spa: true // spa 应用页面跳转的时候开启 pv 计算
+});
+</script>
