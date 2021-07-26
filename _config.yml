@@ -109,11 +109,6 @@ since_year: 2016
 # 用户页面中作者相关的描述性文字，如不需要设为 false
 about: 得之坦然，失之淡然，顺其自然，争其必然！
 
-# “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
-visit_counter:
-  site_uv: 本站已影响
-  site_pv: 并帮助
-
 # 动态定义title
 title_change:
   normal: (*´∇｀*)被你发现啦
