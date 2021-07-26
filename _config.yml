@@ -16,17 +16,6 @@ menu:
     text: 周常出勤记录
     url: https://maimai.yuangezhizao.cn
     target: _blank
-#  camera-retro:
-#    text: 生活之美
-#    target: _blank
-#  share-alt:
-#    text: 经验之谈
-#    url: http://gcy.890m.com
-#    target: _blank
-#  video-camera:
-#    text: 二次元
-#    url: http://bilibili.890m.com
-#    target: _blank
   calendar:
     text: 归档时间轴
     url: /archives/index.html
