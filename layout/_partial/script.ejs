@@ -126,3 +126,17 @@ const aegis = new Aegis({
   spa: true // spa 应用页面跳转的时候开启 pv 计算
 });
 </script>
+
+<script src="https://browser.sentry-cdn.com/6.10.0/bundle.tracing.min.js"></script>
+<script>
+    Sentry.init({
+        dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
+        // this assumes your build process sets "npm_package_version" in the env
+        // release: "yuangezhizao@" + process.env.npm_package_version,
+        integrations: [new Sentry.Integrations.BrowserTracing()],
+
+        // We recommend adjusting this value in production, or using tracesSampler
+        // for finer control
+        tracesSampleRate: 1.0,
+    });
+</script>
