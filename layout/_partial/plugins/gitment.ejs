@@ -2,10 +2,8 @@
     <% if (post.gitment){ %>
         <section class="comments" id="comments">
             <div id="gitment_thread"></div>
-            <!--<link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">-->
-            <link rel="stylesheet" href="/css/default.css?200702">
-            <!--<script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>-->
-            <script src="/js/gitment.browser.js?200702"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.css">
+            <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.js"></script>
             <script>
                 var gitment = new Gitment({
                     id: '<%- post.key %>',
