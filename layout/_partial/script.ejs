@@ -91,39 +91,7 @@ span_tree.innerHTML=health_message_tree
 
 <%- partial('plugins/dynamic-title') %>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-22HCD9N871"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-22HCD9N871');
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?d8e5ef52f9d6d75ff10f7d1a2f478720";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
-<!-- 直接在页面<head></head>标签中引入，将会在 window 上挂载 Aegis 构造函数 -->
-<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
-<script>
-const aegis = new Aegis({
-  id: 'Z4vVGEA6o96DNaY3Op', // 应用ID，即上报key
-  uin: 'Anonymous', // 用户唯一 ID（可选）
-  reportApiSpeed: true, // 接口测速
-  reportAssetSpeed: true, // 静态资源测速
-  spa: true // spa 应用页面跳转的时候开启 pv 计算
-});
-</script>
-
-<script src="https://browser.sentry-cdn.com/6.10.0/bundle.tracing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js"></script>
 <script>
     Sentry.init({
         dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
