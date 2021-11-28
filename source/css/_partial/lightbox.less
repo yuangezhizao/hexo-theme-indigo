@@ -5,10 +5,12 @@
         top: 0;
         left: 0;
         img {
+            max-height: none; //放缩后不限制高度
+            max-width: auto;
             position: absolute;
             z-index: 890;
             &.zoom-in {
-                .transition(.3s);
+                .transition(0.3s);
             }
         }
         .overlay {
@@ -21,7 +23,7 @@
             background: #2f2d2d;
             opacity: 0;
             will-change: opacity;
-            .transition(.3s);
+            .transition(0.3s);
         }
 
         .overlay-title {
@@ -35,7 +37,7 @@
             color: #fff;
             opacity: 0;
             .transform(translate3d(0, 30px, 0));
-            .transition(.3s);
+            .transition(0.3s);
         }
     }
 
@@ -46,7 +48,7 @@
         }
         .overlay,
         .overlay-title {
-            opacity: 1
+            opacity: 1;
         }
         .overlay-title {
             .transform(translate3d(0, 0, 0));
@@ -56,6 +58,8 @@
     img {
         display: inline;
         margin: 0;
+        max-height: 500px; //放缩前限制高度
+        max-width: auto;
         cursor: -webkit-zoom-in;
         cursor: zoom-in;
 
@@ -64,4 +68,3 @@
         }
     }
 }
-
