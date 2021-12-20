@@ -479,7 +479,7 @@
         Blog.toc.fixed(top);
         Blog.toc.actived(top);
         Blog.page.loaded();
-        getjson('https://cors.yuangezhizao.workers.dev/?url=https://api.github.com/repos/yuangezhizao/www/git/refs/heads/master', refs);
+        getjson('https://lab.yuangezhizao.cn/blog/version', refs);
     });
 
     var ignoreUnload = false;
