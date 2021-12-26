@@ -1,5 +1,5 @@
 
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/node-waves@0.7.6/dist/waves.min.js,npm/pangu@4.0.7/dist/browser/pangu.min.js,npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js"></script>
 <script>
 var BLOG = { ROOT: '<%= config.root %>', SHARE: <%- theme.share %>, REWARD: <%- Boolean(page.reward) %> };
 
@@ -84,14 +84,12 @@ span_tree.innerHTML=health_message_tree
 <script src="<%- url_for(theme_js('/js/search', cache)) %>" async></script>
 <% } %>
 
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
 <script> pangu.spacingPage(); console.log("远哥制造 © 2017 - 2021 All Rights Reserved！");</script>
 
 <%- partial('plugins/mathjax') %>
 
 <%- partial('plugins/dynamic-title') %>
 
-<script src="https://cdn.jsdelivr.net/npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js"></script>
 <script>
     Sentry.init({
         dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
