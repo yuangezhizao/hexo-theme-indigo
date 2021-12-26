@@ -89,6 +89,16 @@ span_tree.innerHTML=health_message_tree
 <%- partial('plugins/dynamic-title') %>
 
 <script>
+    const aegis = new Aegis({
+        id: 'Z4vVGEA6o96DNaY3Op', // 应用ID，即上报key
+        uin: 'Anonymous', // 用户唯一 ID（可选）
+        reportApiSpeed: true, // 接口测速
+        reportAssetSpeed: true, // 静态资源测速
+        spa: true // spa 应用页面跳转的时候开启 pv 计算
+    });
+</script>
+
+<script>
     Sentry.init({
         dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
         // this assumes your build process sets "npm_package_version" in the env
