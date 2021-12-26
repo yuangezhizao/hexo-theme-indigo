@@ -64,9 +64,6 @@ reward:
   title: 感谢支持，后期会将您加入打赏名单！
   alipay: https://i1.yuangezhizao.cn/pay/alipay.png!webp     #支付宝，关闭设为 false
 
-# 是否开启搜索
-search: true
-
 # 是否大屏幕下文章页隐藏导航
 hideMenu: true
 
