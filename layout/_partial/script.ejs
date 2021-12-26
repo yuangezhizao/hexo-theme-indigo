@@ -75,10 +75,12 @@ span_tree.innerHTML=health_message_tree
 
 </script>
 
-<script src="<%- url_for(theme_js('/js/combine', cache)) %>"></script>
-<!-- <script src="https://cdn.jsdelivr.net/combine/npm/node-waves@0.7.6/dist/waves.min.js,npm/pangu@4.0.7/dist/browser/pangu.min.js,npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js,gh/yuangezhizao/hexo-theme-indigo@card/source/js/main.js,gh/yuangezhizao/hexo-theme-indigo@card/source/js/search.js"></script> -->
+<% if (theme.search){ %>
+    <%- partial('search') %>
+<% } %>
 
-<%- partial('search') %>
+<script src="<%- url_for(theme_js('/js/combine.min', cache)) %>"></script>
+<!-- <script src="https://cdn.jsdelivr.net/combine/npm/node-waves@0.7.6/dist/waves.min.js,npm/pangu@4.0.7/dist/browser/pangu.min.js,npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js,gh/yuangezhizao/hexo-theme-indigo@card/source/js/main.js"></script> -->
 
 <script> pangu.spacingPage(); console.log("远哥制造 © 2017 - 2021 All Rights Reserved！");</script>
 
