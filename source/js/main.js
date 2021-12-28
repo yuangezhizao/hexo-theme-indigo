@@ -16,7 +16,8 @@
         forEach = Array.prototype.forEach,
         even = ('ontouchstart' in w && /Mobile|Android|iOS|iPhone|iPad|iPod|Windows Phone|KFAPWI/i.test(navigator.userAgent)) ? 'touchstart' : 'click',
         isWX = /micromessenger/i.test(navigator.userAgent),
-        noop = function () { },
+        noop = function () {
+        },
         offset = function (el) {
             var x = el.offsetLeft,
                 y = el.offsetTop;
@@ -32,7 +33,7 @@
                 y: y
             };
         },
-        rootScollTop = function() {
+        rootScollTop = function () {
             return d.documentElement.scrollTop || d.body.scrollTop;
         };
 
@@ -451,40 +452,17 @@
         w.lazyScripts && w.lazyScripts.length && Blog.loadScript(w.lazyScripts)
     });
 
-    w.gEle = function(t) {
-        return document.getElementById(t)
-    };
-    
-    w.getjson = function(t, e, n) {
-        var i = new XMLHttpRequest;
-        return i.onreadystatechange = function() {
-            4 == i.readyState && (200 == i.status ? e(JSON.parse(i.response), n) : e({
-                code: -502,
-                message: "网络错误"
-            }, n))
-        },
-        i.open("GET", t, !0),
-        i.withCredentials = 0,
-        i.send(),
-        i
-    }
-
-    function refs(json) {
-        gEle('refs').textContent = json.object.sha.substr(0,7);
-    }
-
     w.addEventListener('DOMContentLoaded', function () {
         Blog.waterfall();
         var top = rootScollTop();
         Blog.toc.fixed(top);
         Blog.toc.actived(top);
         Blog.page.loaded();
-        getjson('https://lab.yuangezhizao.cn/blog/version', refs);
     });
 
     var ignoreUnload = false;
     var $mailTarget = $('a[href^="mailto"]');
-    if($mailTarget) {
+    if ($mailTarget) {
         $mailTarget.addEventListener(even, function () {
             ignoreUnload = true;
         });
