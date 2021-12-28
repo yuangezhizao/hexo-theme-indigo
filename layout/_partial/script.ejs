@@ -79,8 +79,12 @@ span_tree.innerHTML=health_message_tree
     <%- partial('search') %>
 <% } %>
 
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
 <script src="<%- url_for(theme_js('/js/combine.min', cache)) %>"></script>
-<!-- <script src="https://cdn.jsdelivr.net/combine/npm/node-waves@0.7.6/dist/waves.min.js,npm/pangu@4.0.7/dist/browser/pangu.min.js,npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js,gh/yuangezhizao/hexo-theme-indigo@card/source/js/main.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js"></script>
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@sentry/tracing@6.14.1/build/bundle.tracing.min.js"></script>
 
 <script> pangu.spacingPage(); console.log("远哥制造 © 2017 - 2021 All Rights Reserved！");</script>
 
@@ -89,24 +93,32 @@ span_tree.innerHTML=health_message_tree
 <%- partial('plugins/dynamic-title') %>
 
 <script>
-    const aegis = new Aegis({
-        id: 'Z4vVGEA6o96DNaY3Op', // 应用ID，即上报key
-        uin: 'Anonymous', // 用户唯一 ID（可选）
-        reportApiSpeed: true, // 接口测速
-        reportAssetSpeed: true, // 静态资源测速
-        spa: true // spa 应用页面跳转的时候开启 pv 计算
-    });
+    try{
+        const aegis = new Aegis({
+            id: 'Z4vVGEA6o96DNaY3Op', // 应用ID，即上报key
+            uin: 'Anonymous', // 用户唯一 ID（可选）
+            reportApiSpeed: true, // 接口测速
+            reportAssetSpeed: true, // 静态资源测速
+            spa: true // spa 应用页面跳转的时候开启 pv 计算
+        });
+    }catch(e){
+        console.warn(e.message);
+    }
 </script>
 
 <script>
-    Sentry.init({
-        dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
-        // this assumes your build process sets "npm_package_version" in the env
-        release: "yuangezhizao@<%- theme_version() %>",
-        integrations: [new Sentry.Integrations.BrowserTracing()],
+    try{
+        Sentry.init({
+            dsn: "https://f89081c9c63f45ddb605889d088e9ea1@o174560.ingest.sentry.io/5879838",
+            // this assumes your build process sets "npm_package_version" in the env
+            release: "yuangezhizao@<%- theme_version() %>",
+            integrations: [new Sentry.Integrations.BrowserTracing()],
 
-        // We recommend adjusting this value in production, or using tracesSampler
-        // for finer control
-        tracesSampleRate: 0.5,
-    });
+            // We recommend adjusting this value in production, or using tracesSampler
+            // for finer control
+            tracesSampleRate: 0.5,
+        });
+    }catch(e){
+        console.warn(e.message);
+    }
 </script>
