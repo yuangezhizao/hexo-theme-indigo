@@ -1,4 +1,4 @@
-console.log("远哥制造 © 2017 - 2021 All Rights Reserved！");
+console.log("远哥制造 © 2017 - 2022 All Rights Reserved！");
 
 function gEle(t) {
     return document.getElementById(t)
