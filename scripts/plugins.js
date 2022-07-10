@@ -13,18 +13,26 @@ const source = (path, cache, ext) => {
 hexo.extend.helper.register('theme_js', (path, cache) => source(path, cache, '.js'))
 hexo.extend.helper.register('theme_css', (path, cache) => source(path, cache, '.css'))
 
+const replace_src_host = (src) => {
+    if (process.env.VERCEL && src.indexOf('i1.yuangezhizao.cn') != -1) {
+       return src.replace('i1.yuangezhizao.cn', 'i2.yuangezhizao.cn').replace('!webp', '').replace('!view', '')
+    } else {
+        return src
+    }
+}
+
 function renderImage(src, alt = '', title = '') {
     return `<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="${src}" alt="${alt}" title="${title}">
+                    <img src="${replace_src_host(src)}" alt="${alt}" title="${title}">
                 </div>
                 <div class="image-caption">${title || alt}</div>
             </figure>`
 }
 
 hexo.extend.tag.register('image', ([src, alt = '', title = '']) => {
-    return hexo.theme.config.lightbox ? renderImage(src, alt, title) : `<img src="${src}" alt="${alt}" title="${title}">`
+    return hexo.theme.config.lightbox ? renderImage(src, alt, title) : `<img src="${replace_src_host(src)}" alt="${alt}" title="${title}">`
 })
 
 hexo.extend.filter.register('before_post_render', data => {
