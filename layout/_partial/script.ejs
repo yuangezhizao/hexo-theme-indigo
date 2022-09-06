@@ -23,7 +23,9 @@
 
 <script>
     try {
-        pangu.spacingPage();
+        // pangu.spacingPage();
+        pangu.spacingElementByClassName('post-meta');
+        pangu.spacingElementByClassName('post-copyright');
     } catch (e) {
         console.warn(e.message);
     }
