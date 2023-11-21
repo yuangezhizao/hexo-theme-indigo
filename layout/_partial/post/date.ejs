@@ -19,8 +19,8 @@
 <span><i class="icon icon-list-ol icon-pr"></i><%- post.key %></span>
 
 <% if(is_post()){ %>
-<span id="<%- post.key %>" class="leancloud_visitors" data-flag-title="<%- post.title %>">
+<span data-path="<%- post.key %>">
     <i class="icon icon-eye icon-pr"></i>
-    <i class="leancloud-visitors-count"></i>
+    <i class="waline-pageview-count"></i>
 </span>
 <%} %>

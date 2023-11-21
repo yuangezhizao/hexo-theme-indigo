@@ -41,6 +41,7 @@
     <meta name="theme-color" content="<%=theme.color%>">
     <% } %>  
     <link rel="stylesheet" href="<%- url_for(theme_css('/css/style', cache)) %>">
+    <link rel="stylesheet" href="https://s1.yuangezhizao.cn/npm/@waline/client@v2/dist/waline.min.css"/>
     <% if ((config.feed) && (config.feed.path.length)) { %>
         <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%- url_for(config.feed.path) %>">
     <% } %>
